@@ -1,9 +1,32 @@
 /* Bordered form */
 form {
-  border: 3px solid #f1f1f1;
+  border: 3px solid #0170FE;
+  width: 50%;
+  margin:auto;
+}
+
+body {
+  background-color:rgb(45, 45, 45);
 }
 
 label {
+  font-family: 'Poppins', sans-serif;
+  color:white;
+}
+
+a{
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+p {
+  padding-left: 15px;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  color:white;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -19,13 +42,15 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
+  background-color: #0170FE;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 25px;
 }
 
 /* Add a hover effect for buttons */
@@ -54,13 +79,16 @@ img.avatar {
 
 /* Add padding to containers */
 .container {
-  padding: 16px;
+  padding: 10px;
+  background-color: rgb(45, 45, 45);
+  color:white;
 }
 
 /* The "Forgot password" text */
 span.psw {
   float: right;
   padding-top: 16px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -72,4 +100,142 @@ span.psw {
   .cancelbtn {
     width: 100%;
   }
+}
+
+header {
+
+  
+
+  display:flex;
+
+  align-items: center;
+
+  transition: 0.6s;
+
+  justify-content: space-between;
+
+  z-index: 10000000;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  background-color:rgb(30, 30, 30);
+
+
+
+
+}
+
+
+
+
+header .logo {
+
+  position: relative;
+
+  font-weight: 700;
+
+  transition: 0.6s;
+
+
+
+
+}
+
+
+
+
+.logo{
+
+  width: 80px;
+
+  cursor:pointer;
+
+  padding: 10%;
+
+  
+
+}
+
+
+
+
+header ul {
+
+  position: relative;
+
+  display: flex;
+
+  justify-self:center;
+
+  align-items: center;
+
+
+
+
+}
+
+
+
+
+header ul li{
+
+  list-style: none;
+
+  position: relative;
+
+}
+
+
+
+
+header ul li a {
+
+  text-decoration: none;
+
+  color: white;
+
+  font-size: 15px;
+
+  position: relative;
+
+  initial-letter: 2px;
+
+  margin: 0 15px;
+
+}
+
+
+
+
+header ul li::after{
+
+  content: '';
+
+  height: 3px;
+
+  width: 0%;
+
+  background: #0170FE;
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -10px;
+
+  transition: 0.5s;
+
+}
+
+
+
+
+  header ul li:hover::after{
+
+  width: 100%;
+
 }
