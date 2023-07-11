@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html><body>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/dbread.css">
+    <link rel="icon" href="img/bluepark-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  </head>
 <?php
 /*
   Rui Santos
@@ -58,6 +65,8 @@ if ($result = $conn->query($sql)) {
               </tr>';
     }
     $result->free();
+    echo "<h1>There are currently 0 free spaces.</h1>";
+    echo "<hr>";
 }
 
 $conn->close();

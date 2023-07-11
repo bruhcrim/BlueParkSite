@@ -3,8 +3,8 @@
 // Define database and user details
 $servername = "rds-mysql-bluepark.ckcalsncefzg.us-west-1.rds.amazonaws.com";
 $dbname = "Bluepark";
-$username = "ESP8266";
-$password = "password12345";
+$username = "login";
+$password = "";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

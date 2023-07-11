@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+    padding: 10px;
+    margin:auto;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+tr {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+table {
+    margin:auto;
+}
+
+body {
+    background-color:rgb(30, 30, 30);
+}
