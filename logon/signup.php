@@ -13,13 +13,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Retrieve form data
     $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
+
+    // Make sure email is valid before signing up
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        exit('Invalid email address!');
+    }
     // Check if email is already used, if so tell the user and if not continue
     if ($stmt = $conn->prepare('SELECT id, password from users WHERE email = ?')) {
         $stmt->bind_param('s', $_POST["email"]);
@@ -33,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $stmt->bind_param ('sss', $_POST['username'], $password, $_POST['email']);
                 $stmt->execute();
+
                 // Send user back to login page
                 header("Location: login.html");
             } else {
