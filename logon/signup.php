@@ -4,10 +4,10 @@
 $servername = "rds-mysql-bluepark.ckcalsncefzg.us-west-1.rds.amazonaws.com";
 $dbname = "Bluepark";
 $username = "ESP8266";
-$password = "password12345";
+$dbpassword = "password12345";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $dbpassword, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
