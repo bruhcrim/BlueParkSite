@@ -7,26 +7,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   </head>
+  <body>
+
+  <header>
+    <a href="index.html"><img src="img/bluepark-logo.png" class="logo"></a>
+        <ul>
+            <li><a href="index.html#home">HOME</a></li>
+            <li><a href="index.html#about">THE-TEAM</a></li>
+            <li><a href="index.html#contact">CONTACTS</a></li>
+      <li><a href="logon/login.html">LOG IN</a></li>
+        </ul>
+<a href="index.html"><img src="img/bluepark-logo.png" class="logo"></a>
+</header>
+
 <?php
-/*
-  Rui Santos
-  Complete project details at https://RandomNerdTutorials.com/esp32-esp8266-mysql-database-php/
-  
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files.
-  
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-*/
-
+// Begin session for user data
+session_start();
 $servername = "rds-mysql-bluepark.ckcalsncefzg.us-west-1.rds.amazonaws.com";
-
 // REPLACE with your Database name
 $dbname = "Bluepark";
 // REPLACE with Database user
 $username = "Client";
 // REPLACE with Database user password
 $password = "";
+
+$availableSpaces = 0;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -57,6 +62,10 @@ if ($result = $conn->query($sql)) {
         // Uncomment to set timezone to + 4 hours (you can change 4 to any number)
         //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time + 4 hours"));
       
+        // Count how many spaces are free
+        $availableSpaces += $row_IsOccupied;
+
+        // Print table
         echo '<tr> 
                 <td>' . $row_ID . '</td> 
                 <td>' . $row_lot_name . '</td> 
@@ -65,7 +74,12 @@ if ($result = $conn->query($sql)) {
               </tr>';
     }
     $result->free();
-    echo "<h1>There are currently 0 free spaces.</h1>";
+
+    // Echo title with how many spaces available
+    echo '<p style="color: white">Welcome ' . $_SESSION['name'] . '</p>';
+    echo "<div><h1>There are currently</h1>";
+    echo '<h1 style="color: #0170FE">' . $availableSpaces . '</h1>';
+    echo "<h1>free spaces.</h1></div>";
     echo "<hr>";
 }
 

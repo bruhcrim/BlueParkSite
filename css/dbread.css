@@ -1,9 +1,16 @@
 h1 {
     text-align: center;
-    padding: 10px;
-    margin:auto;
+    margin-right: 10px;
     color: white;
     font-family: 'Poppins', sans-serif;
+    display: inline-block;
+}
+
+p {
+    color: white;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    margin:auto;
 }
 
 tr {
@@ -17,4 +24,148 @@ table {
 
 body {
     background-color:rgb(30, 30, 30);
+    height: 100vh;
 }
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+
+  
+
+    display:flex;
+  
+    align-items: center;
+  
+    transition: 0.6s;
+  
+    justify-content: space-between;
+  
+    z-index: 10000000;
+  
+    top: 0;
+  
+    left: 0;
+  
+    width: 100%;
+
+    background-color: rgb(20, 20, 25);
+
+    font-family: 'Poppins', sans-serif;
+  
+  
+  
+  
+  }
+
+  header .logo {
+
+    position: relative;
+  
+    font-weight: 700;
+  
+    transition: 0.6s;
+  
+  
+  
+  
+  }
+  
+  
+  
+  
+  .logo{
+  
+    width: 80px;
+  
+    cursor:pointer;
+  
+    padding: 5%;
+  
+    
+  
+  }
+  
+  
+  
+  
+  header ul {
+  
+    position: relative;
+  
+    display: flex;
+  
+    justify-self:center;
+  
+    align-items: center;
+  
+  
+  
+  
+  }
+  
+  
+  
+  
+  header ul li{
+  
+    list-style: none;
+  
+    position: relative;
+  
+  }
+  
+  
+  
+  
+  header ul li a {
+  
+    text-decoration: none;
+  
+    color: white;
+  
+    font-size: 15px;
+  
+    position: relative;
+  
+    initial-letter: 2px;
+  
+    margin: 0 15px;
+  
+  }
+  
+  
+  
+  
+  header ul li::after{
+  
+    content: '';
+  
+    height: 3px;
+  
+    width: 0%;
+  
+    background: #0170FE;
+  
+    position: absolute;
+  
+    left: 0;
+  
+    bottom: -10px;
+  
+    transition: 0.5s;
+  
+  }
+  
+  
+  
+  
+    header ul li:hover::after{
+  
+    width: 100%;
+  
+  }
