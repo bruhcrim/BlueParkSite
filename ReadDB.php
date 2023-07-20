@@ -16,7 +16,7 @@
             <li><a href="index.html#about">THE-TEAM</a></li>
             <li><a href="index.html#contact">CONTACTS</a></li>
             <li><a href="faq.html">FAQ</a></li>
-      <li><a href="logon/login.html">LOG IN</a></li>
+            <li><a href="logon/login.html">LOG IN</a></li>
         </ul>
 <a href="index.html"><img src="img/bluepark-logo.png" class="logo"></a>
 </header>
@@ -32,7 +32,7 @@ $username = "Client";
 // REPLACE with Database user password
 $password = "";
 
-$availableSpaces = 0;
+$availableSpaces = 3;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -64,7 +64,7 @@ if ($result = $conn->query($sql)) {
         //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time + 4 hours"));
       
         // Count how many spaces are free
-        $availableSpaces += $row_IsOccupied;
+        $availableSpaces -= $row_IsOccupied;
 
         // Print table
         echo '<tr> 
