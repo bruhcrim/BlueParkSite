@@ -15,6 +15,7 @@
             <li><a href="index.html#home">HOME</a></li>
             <li><a href="index.html#about">THE-TEAM</a></li>
             <li><a href="index.html#contact">CONTACTS</a></li>
+            <li><a href="faq.html">FAQ</a></li>
       <li><a href="logon/login.html">LOG IN</a></li>
         </ul>
 <a href="index.html"><img src="img/bluepark-logo.png" class="logo"></a>

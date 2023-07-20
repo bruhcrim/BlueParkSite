@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BLUEPARK FAQ</title>
+<style>
+       .question {
+           font-weight: bold;
+           cursor: pointer;
+       }
+
+       .answer {
+           display: none;
+       }
+</style>
+<script>
+       function toggleAnswer(event) {
+           var answer = event.target.nextElementSibling;
+           if (answer.style.display === "none") {
+               answer.style.display = "block";
+           } else {
+               answer.style.display = "none";
+           }
+       }
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: rgb(30, 30, 30)">
+<h1>Frequently Asked Questions</h1>
+<div class="faq">
+<div style="color:white" class="question" onclick="toggleAnswer(event)">Q: How do I get started?</div>
+<div style="color:white" class="answer">A: To get started, simply sign up on our website and follow the on-screen instructions.</div>
+
+<div style="color:white" class="question" onclick="toggleAnswer(event)">Q: Is there a free trial?</div>
+<div style="color:white" class="answer">A: Yes, we offer a 7-day free trial for all new users.</div>
+
+<div style="color:white" class="question" onclick="toggleAnswer(event)">Q: Can I cancel my subscription?</div>
+<div style="color:white" class="answer">A: Yes, you can cancel your subscription at any time by going to your account settings.</div>
+
+<div style="color:white" class="question" onclick="toggleAnswer(event)">Q: how can I contact customer care service?</div>
+<div style="color:white" class="answer">A: you can email us with your questions and concerns at bluepark@gmail.com.</div>
+</div>
+</body>
+</html>
