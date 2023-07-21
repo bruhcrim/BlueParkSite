@@ -44,9 +44,9 @@ if ($conn->connect_error) {
 $sql = "SELECT ID, lot_name, IsOccupied, Cost FROM parking_data ORDER BY ID DESC";
 
 echo '<table cellspacing="5" cellpadding="5">
-      <tr> 
-        <td>Location</td> 
-        <td>Occupied</td> 
+      <tr>
+        <td>Location</td>
+        <td>Status</td>
       </tr>';
  
 if ($result = $conn->query($sql)) {
@@ -59,10 +59,20 @@ if ($result = $conn->query($sql)) {
         // Count how many spaces are free
         $availableSpaces -= $row_IsOccupied;
 
+        // Determine if Occupied or Unoccupied is printed in table
+        // Also determine the color of the text that will be printed
+        if($row_IsOccupied == 1) {
+          $occupancyStatus = 'Occupied';
+          $occupancyColor = 'red';
+        } else {
+          $occupancyStatus = 'Unoccupied';
+          $occupancyColor = 'green';
+        }
+
         // Print table
         echo '<tr> 
                 <td>' . $row_lot_name . '</td>
-                <td>' . $row_IsOccupied . '</td>
+                <td style="color:' . $occupancyColor . '">' . $occupancyStatus . '</td>
               </tr>';
     }
     $result->free();

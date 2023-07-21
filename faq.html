@@ -3,14 +3,84 @@
 <head>
 <title>BLUEPARK FAQ</title>
 <style>
+        h1 {
+            text-align: center;
+            margin: auto;
+            padding: 15px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
        .question {
            font-weight: bold;
+           padding-bottom: 5px;
            cursor: pointer;
+           margin: auto;
+           text-align: center;
+           font-family: 'Poppins', sans-serif;
        }
 
        .answer {
            display: none;
+           padding-bottom: 10px;
+           margin: auto;
+           text-align: center;
+           font-family: 'Poppins', sans-serif;
        }
+       
+       header {
+        display:flex;
+        align-items: center;
+        transition: 0.6s;
+        justify-content: space-between;
+        z-index: 10000000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgb(20, 20, 25);
+        font-family: 'Poppins', sans-serif;
+        }
+        header .logo {
+        position: relative;
+        font-weight: 700;
+        transition: 0.6s;
+        }
+        .logo{
+        width: 80px;
+        cursor:pointer;
+        padding: 5%;
+        }
+        header ul {
+        position: relative;
+        display: flex;
+        justify-self:center;
+        align-items: center;
+        }
+        header ul li{
+        list-style: none;
+        position: relative;
+        }
+        header ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        position: relative;
+        initial-letter: 2px;
+        margin: 0 15px;
+        }
+        header ul li::after{
+        content: '';
+        height: 3px;
+        width: 0%;
+        background: #0170FE;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+        }
+        header ul li:hover::after{
+        width: 100%;
+}
 </style>
 <script>
        function toggleAnswer(event) {
@@ -22,9 +92,22 @@
            }
        }
 </script>
-<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body style="background-color: rgb(30, 30, 30)">
+    <header>
+        <a href="index.html"><img src="img/bluepark-logo.png" class="logo"></a>
+            <ul>
+                <li><a href="index.html#home">HOME</a></li>
+                <li><a href="index.html#about">THE-TEAM</a></li>
+                <li><a href="index.html#contact">CONTACTS</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="logon/login.html">LOG IN</a></li>
+            </ul>
+    <a href="index.html"><img src="img/bluepark-logo.png" class="logo"></a>
+    </header>
 <h1>Frequently Asked Questions</h1>
 <div class="faq">
 <div style="color:white" class="question" onclick="toggleAnswer(event)">Q: How do I get started?</div>
