@@ -45,10 +45,8 @@ $sql = "SELECT ID, lot_name, IsOccupied, Cost FROM parking_data ORDER BY ID DESC
 
 echo '<table cellspacing="5" cellpadding="5">
       <tr> 
-        <td>ID</td> 
         <td>Location</td> 
         <td>Occupied</td> 
-        <td>Cost</td> 
       </tr>';
  
 if ($result = $conn->query($sql)) {
@@ -68,10 +66,8 @@ if ($result = $conn->query($sql)) {
 
         // Print table
         echo '<tr> 
-                <td>' . $row_ID . '</td> 
-                <td>' . $row_lot_name . '</td> 
-                <td>' . $row_IsOccupied . '</td> 
-                <td>$' . $row_Cost . '</td> 
+                <td>' . $row_lot_name . '</td>
+                <td>' . $row_IsOccupied . '</td>
               </tr>';
     }
     $result->free();
