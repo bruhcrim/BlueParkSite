@@ -82,7 +82,7 @@ if ($result = $conn->query($sql)) {
     echo "<div><h1>There are currently</h1>";
     echo '<h1 style="color: #0170FE">' . $availableSpaces . '</h1>';
     echo "<h1>free spaces.</h1></div>";
-    echo "<hr>";
+    echo "<hr style='width: 50%;'>";
 }
 
 $conn->close();
